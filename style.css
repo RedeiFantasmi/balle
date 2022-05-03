@@ -1,0 +1,39 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeee;
+}
+
+#ball {
+    height: 32px;
+    width: 32px;
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: visible;
+}
+
+#game-starter {
+    border: gray solid 0.3vw;
+    padding: 10px 20px;
+    box-shadow: none;
+    background-color: lightcoral;
+    border-radius: 4px;
+    font-size: 5vw;
+    transition: background-color 0.25s;
+}
+
+#game-starter:hover {
+    background-color: red;
+}
