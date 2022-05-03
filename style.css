@@ -1,15 +1,8 @@
-html {
-    height: -webkit-fill-available;
-}
-
-body {
-    min-height: 100svh;
-}
-
 body, html {
     margin: 0;
     padding: 0;
     width: 100vw;
+    height: 100vh;
     overflow: hidden;
 }
 
