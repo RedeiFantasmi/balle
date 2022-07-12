@@ -1,10 +1,3 @@
-script.js
-Au début de l'année
-9 Mai
-
-Vous avez importé un élément
-JavaScript
-script.js
 // Déclaration de la constante de la vitesse (en ms ; - = plus vite)
 const BALL_SPEED = 1;
 
