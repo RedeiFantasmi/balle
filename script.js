@@ -1,3 +1,10 @@
+script.js
+Au début de l'année
+9 Mai
+
+Vous avez importé un élément
+JavaScript
+script.js
 // Déclaration de la constante de la vitesse (en ms ; - = plus vite)
 const BALL_SPEED = 1;
 
@@ -33,26 +40,20 @@ function startBall() {
         // test collision
         if(balle.right >= window_width) { // si on touche le bord droit
             x_axis = -MOUV_X;
+            balle.left = window_width - balle.width
         } else if(balle.left <= 0) { // si on touche le bord gauche
             x_axis = MOUV_X;
         }
         if(balle.bottom >= window_height) { // si on touche le bord du bas
             y_axis = -MOUV_Y;
+            balle.top = window_height - balle.height
         } else if(balle.top <= 0) { // si on touche le bord du haut
             y_axis = MOUV_Y;
         }
 
         // on change les coordonnées de la balle
         balle.left += x_axis;
-        balle.top += y_axis;
-        
-        // on vérifie si la balle est en dehors de l'écran
-        if(balle.bottom > window_height+MOUV_Y || balle.top < -MOUV_Y || balle.right > window_width+MOUV_X || balle.left < -MOUV_Y) {
-            balle.top = 0;
-            balle.left = 0;
-        }
-
-        
+        balle.top += y_axis;        
 
         // on applique les nouvelles coordonnées
         balle.style.top = `${balle.top}px`;
@@ -66,12 +67,15 @@ function startBall() {
 // Fonction qui met à jour les variables contenant la position de la balle
 function setBallDimensions() {
     let BALLE_PROPERTIES = balle.getBoundingClientRect();
+    balle.width = BALLE_PROPERTIES["width"];
+    balle.height = BALLE_PROPERTIES["height"];
     balle.left = BALLE_PROPERTIES["left"];
     balle.top = BALLE_PROPERTIES["top"];
     balle.right = BALLE_PROPERTIES["right"];
     balle.bottom = BALLE_PROPERTIES["bottom"];
 }
 
+// Fonction qui détecte le click sur le bouton de lancement et le cache
 document.getElementById("game-starter").addEventListener( "click", function() {
     document.getElementById("game-starter").remove();
     startBall();
